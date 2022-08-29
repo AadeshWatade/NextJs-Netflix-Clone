@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import Dropdown from './Dropdown';
 
-const Header = () => {
+const Header = ({}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { logout } = useAuth();
   useEffect(() => {
@@ -24,7 +24,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${isScrolled && 'bg-[#141414]'}`}>
+    <header
+      className={`${
+        isScrolled && 'bg-[#141414] '
+      }transition-all duration-1000`}>
       <div className="flex items-center space-x-2 md:space-x-10">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
